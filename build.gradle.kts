@@ -3,6 +3,7 @@ plugins {
     jacoco
     id("org.springframework.boot") version "3.4.2"
     id("io.spring.dependency-management") version "1.1.7"
+    id("org.sonarqube") version "7.2.2.6593"
 }
 
 group = "id.ac.ui.cs.advprog"
@@ -16,6 +17,14 @@ val webdrivermanagerVersion = "5.6.3"
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "B-Rehema-Zurafa-Saputra-2406432072_Modul-2-CI-CD-DevOps")
+        property("sonar.organization", "b-rehema-zurafa-saputra-2406432072")
+        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
 
