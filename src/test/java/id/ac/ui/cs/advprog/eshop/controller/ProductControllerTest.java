@@ -28,10 +28,6 @@ class ProductControllerTest {
     @MockitoBean
     private ProductService productService;
 
-    @BeforeEach
-    void setUp() {
-    }
-
     @Test
     void testCreateProductPage() throws Exception {
         mockMvc.perform(get("/product/create"))
