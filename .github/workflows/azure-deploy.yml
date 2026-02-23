@@ -30,7 +30,9 @@ jobs:
           cache: 'gradle'
 
       - name: Build with Gradle
-        run: ./gradlew build -x test
+        run: |
+          ./gradlew build -x test
+          rm build/libs/*-plain.jar
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@657f0700ea5214d56a0400d8ac5e8023c963d25d # v3.0.6
