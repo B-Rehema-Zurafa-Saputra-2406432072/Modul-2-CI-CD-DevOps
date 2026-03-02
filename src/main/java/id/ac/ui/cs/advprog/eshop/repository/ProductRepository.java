@@ -34,11 +34,12 @@ public class ProductRepository {
     }
 
     public Product update(Product product) {
-        for (Product productDiRepo : productData) {
+        for (int i = 0; i < productData.size(); i++) {
+            Product productDiRepo = productData.get(i);
             if (productDiRepo.getProductId().equals(product.getProductId())) {
-                productDiRepo.setProductName(product.getProductName());
-                productDiRepo.setProductQuantity(product.getProductQuantity());
-                return productDiRepo;
+                // ganti old product dengan produk baru
+                productData.set(i, product);
+                return product;
             }
         }
         return null; // Handle if product not found
